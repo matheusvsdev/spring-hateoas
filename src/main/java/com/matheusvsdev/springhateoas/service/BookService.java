@@ -1,11 +1,12 @@
 package com.matheusvsdev.springhateoas.service;
 
 import com.matheusvsdev.springhateoas.dto.BookDTO;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.PagedModel;
 
 public interface BookService {
 
-    Page<BookDTO> findBooks(Pageable pageable);
-    BookDTO findBookById(Long id);
+    PagedModel<EntityModel<BookDTO>> findBooks(Pageable pageable);
+    EntityModel<BookDTO> findBookById(Long id);
 }
